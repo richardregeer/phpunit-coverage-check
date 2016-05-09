@@ -1,17 +1,23 @@
 {
-    "name": "rregeer/phpunit-coverage-check",
-    "description": "Check the code coverage using the clover report of phpunit",
-    "keywords": [
-        "Testing", "PHP", "phpunit", "Unittest", "CI", "Code coverage"],
-    "version": "0.1.0",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Richard Regeer",
-            "email": "rich2309@gmail.com"
-        }
-    ],
-    "require": {
-        "php": ">=5.5.0"
+  "name": "rregeer/phpunit-coverage-check",
+  "description": "Check the code coverage using the clover report of phpunit",
+  "keywords": [
+    "Testing",
+    "PHP",
+    "phpunit",
+    "Unittest",
+    "CI",
+    "Code coverage"
+  ],
+  "version": "0.1.1",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Richard Regeer",
+      "email": "rich2309@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=5.5.0"
+  }
 }

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+php ./vendor/rregeer/phpunit-coverage-check $1 $2
