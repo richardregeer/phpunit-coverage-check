@@ -1,0 +1,12 @@
+{
+    "name": "richardregeer/phpunit-coverage-check",
+    "description": "Check the code coverage using the clover report of phpunit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Richard Regeer",
+            "email": "rich2309@gmail.com"
+        }
+    ],
+    "require": {}
+}
