@@ -9,7 +9,6 @@
     "CI",
     "Code coverage"
   ],
-  "version": "0.1.3",
   "license": "MIT",
   "authors": [
     {
@@ -20,5 +19,5 @@
   "require": {
     "php": ">=5.5.0"
   },
-  "bin": ["bin/", "bin/coverage-check"]
+  "bin": ["bin/coverage-check"]
 }
