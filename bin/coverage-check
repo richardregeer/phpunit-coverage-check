@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env php
+<?php
 
-php vendor/rregeer/phpunit-coverage-check/coverage-check.php $1 $2
+include 'vendor/rregeer/phpunit-coverage-check/coverage-check.php';
