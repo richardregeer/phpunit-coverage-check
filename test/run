@@ -1,0 +1,12 @@
+#!/bin/bash -eu
+
+# Consistent CWD, regardless of which directory the script is run from.
+cd $(dirname $0)/..
+
+# Expect pass
+bin/coverage-check test/clover.xml 0
+bin/coverage-check test/clover.xml 90
+
+# Expect fail
+! bin/coverage-check test/clover.xml 95
+! bin/coverage-check test/clover.xml 100
