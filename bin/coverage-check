@@ -1,4 +1,4 @@
 #!/usr/bin/env php
 <?php
 
-include 'vendor/rregeer/phpunit-coverage-check/coverage-check.php';
+require dirname( __DIR__ ) . '/coverage-check.php';
