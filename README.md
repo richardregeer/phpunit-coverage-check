@@ -1,9 +1,11 @@
+[![Build Status](https://travis-ci.org/richardregeer/phpunit-coverage-check.svg?branch=master)](https://travis-ci.org/richardregeer/phpunit-coverage-check)
+
 # phpunit-coverage-check
 This php script will read the clover xml report from phpunit and calculates the coverage score. Based on the given threshold the script will exit ok of the coverage is higher then the threshold or exit with code 1 if the coverage is lower then the threshold.
 This script can be used in your continuous deployment environment or for example added to a pre-commit hook.
 
 # Installation
-The script can be installed using composer.Add this repository as a dependency to the composer.json file.
+The script can be installed using composer. Add this repository as a dependency to the composer.json file.
 ```bash
 composer require --dev rregeer/phpunit-coverage-check
 composer install
@@ -29,5 +31,5 @@ It's also possible to add the coverage report generation to the phpunit.xml.dist
 </logging>
 ```
 
-For more information see the [phpunit documentation](https://phpunit.de/manual/5.3/en/index.html).  
+For more information see the [phpunit documentation](https://phpunit.de/manual/5.3/en/index.html).
 Information about the [configuration file](https://phpunit.de/manual/5.3/en/appendixes.configuration.html#appendixes.configuration) and [commandline options](https://phpunit.de/manual/current/en/textui.html#textui.clioptions).
