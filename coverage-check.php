@@ -32,8 +32,25 @@ foreach ($metrics as $metric) {
     $coveredmethods += (int)$metric['coveredmethods'];
 }
 
-// See calculation: https://confluence.atlassian.com/pages/viewpage.action?pageId=79986990
-$TPC = ($coveredstatements + $coveredmethods + $coveredElements) / ($statements + $methods + $elements) * 100;
+$type = "default";
+if (isset($argv[3])) {
+    $type = $argv[3];
+}    
+switch ($type) {
+    case 'statment':
+        $TPC = $coveredstatements / $statements * 100;
+        break;
+    case 'methods':
+        $TPC = $coveredmethods / $methods * 100;
+        break;
+    case 'elements':
+        $TPC = $coveredElements / $elements * 100;
+        break;
+    default:
+        // See calculation: https://confluence.atlassian.com/pages/viewpage.action?pageId=79986990
+        $TPC = ($coveredstatements + $coveredmethods + $coveredElements) / ($statements + $methods + $elements) * 100;
+}
+
 
 if ($TPC < $percentage) {
     echo 'Total code coverage is ' . sprintf('%0.2f', $TPC) . '%, which is below the accepted ' . $percentage . '%' . PHP_EOL;
