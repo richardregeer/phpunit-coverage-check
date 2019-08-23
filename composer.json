@@ -1,5 +1,5 @@
 {
-  "name": "rregeer/phpunit-coverage-check",
+  "name": "misiuziu/phpunit-coverage-check",
   "description": "Check the code coverage using the clover report of phpunit",
   "keywords": [
     "Testing",
@@ -14,6 +14,10 @@
     {
       "name": "Richard Regeer",
       "email": "rich2309@gmail.com"
+    },
+    {
+      "name": "Tomasz Sierżański",
+      "email": "plum.ziu@gmail.com"
     }
   ],
   "require": {
