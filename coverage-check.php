@@ -11,7 +11,7 @@ if (!isset($argv[2])) {
 }
 
 $inputFile = $argv[1];
-$percentage = min(100, max(0, (int)$argv[2]));
+$percentage = min(100, max(0, (float)$argv[2]));
 
 $xml = new SimpleXMLElement(file_get_contents($inputFile));
 $metrics = $xml->xpath('//metrics');
