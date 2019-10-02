@@ -10,6 +10,12 @@ if (!isset($argv[2])) {
     exit(1);
 }
 
+$onlyEchoPercentage = false;
+
+if (isset($argv[3]) && $argv[3] === 'only-percentage') {
+    $onlyEchoPercentage = true;
+}
+
 $inputFile = $argv[1];
 $percentage = min(100, max(0, (float)$argv[2]));
 
@@ -35,9 +41,19 @@ foreach ($metrics as $metric) {
 // See calculation: https://confluence.atlassian.com/pages/viewpage.action?pageId=79986990
 $TPC = ($coveredstatements + $coveredmethods + $coveredElements) / ($statements + $methods + $elements) * 100;
 
-if ($TPC < $percentage) {
+if ($TPC < $percentage && ! $onlyEchoPercentage) {
     echo 'Total code coverage is ' . sprintf('%0.2f', $TPC) . '%, which is below the accepted ' . $percentage . '%' . PHP_EOL;
     exit(1);
+}
+
+if ($TPC < $percentage && $onlyEchoPercentage) {
+    echo sprintf('%0.2f', $TPC) . PHP_EOL;
+    exit(1);
+}
+
+if ($onlyEchoPercentage) {
+    echo sprintf('%0.2f', $TPC) . PHP_EOL;
+    exit(0);
 }
 
 echo 'Total code coverage is ' . sprintf('%0.2f', $TPC) . '% - OK!' . PHP_EOL;
