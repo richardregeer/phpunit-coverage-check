@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1002">
+    <project timestamp="1002">
+        <package name="Example">
+            <file name="/tmp/Example/String.php">
+                <class name="Example\String" namespace="Example">
+                    <metrics complexity="15" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+                </class>
+                <metrics loc="1" ncloc="1" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+            </file>
+            <file name="/tmp/Example/StringList.php">
+                <class name="Example\StringList" namespace="Example">
+                    <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+                </class>
+                <metrics loc="1" ncloc="1" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+            </file>
+        </package>
+        <metrics files="1" loc="0" ncloc="0" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </project>
+</coverage>
