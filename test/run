@@ -8,5 +8,12 @@ bin/coverage-check test/clover.xml 0
 bin/coverage-check test/clover.xml 90
 
 # Expect fail
+! bin/coverage-check test/empty.xml 10
 ! bin/coverage-check test/clover.xml 95
 ! bin/coverage-check test/clover.xml 100
+
+# Only percentage
+expected="90.32 %"
+actual=$(bin/coverage-check test/clover.xml 90 --only-percentage)
+
+[[ "$expected" == "$actual" ]] || (echo "ERROR: Expected coverage $expected, got $actual" && exit 1)
