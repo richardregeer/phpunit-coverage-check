@@ -28,13 +28,13 @@ vendor/bin/coverage-check clover.xml 80 --only-percentage
 
 With the `--only-percentage` enabled, the CLI command will only return the resulting coverage percentage.
 
-It's also possible to add the coverage report generation to the phpunit.xml.dist add to following line to the xml file:
+It's also possible to add the coverage report generation to the `phpunit.xml.dist` add to following lines to the xml file inside the `<coverage>` tag:
 
 ```xml
-<logging>
-    <log type="coverage-clover" target="clover.xml"/>
-</logging>
+<report>
+    <clover outputFile="clover.xml" />
+</report>
 ```
 
-For more information see the [phpunit documentation](https://phpunit.de/manual/5.3/en/index.html).
-Information about the [configuration file](https://phpunit.de/manual/5.3/en/appendixes.configuration.html#appendixes.configuration) and [commandline options](https://phpunit.de/manual/current/en/textui.html#textui.clioptions).
+For more information see the [phpunit documentation](https://phpunit.readthedocs.io/en/9.5/).
+Information about the [configuration file](https://phpunit.readthedocs.io/en/9.5/configuration.html) and [commandline options](https://phpunit.readthedocs.io/en/9.5/textui.html#command-line-options).
