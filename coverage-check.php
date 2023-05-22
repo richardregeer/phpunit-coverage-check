@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 // Inspired by: https://ocramius.github.io/blog/automated-code-coverage-check-for-github-pull-requests-with-travis/
 
-const XPATH_METRICS = '//metrics';
+const XPATH_METRICS = '//project/metrics';
 const STATUS_OK = 0;
 const STATUS_ERROR = 1;
 
@@ -42,16 +42,16 @@ $onlyEchoPercentage = isset($argv[3]) && $argv[3] === '--only-percentage';
 $inputFile = $argv[1];
 $percentage = min(100, max(0, (float) $argv[2]));
 
-$elements = 0;
-$coveredElements = 0;
+$conditionals = 0;
+$coveredconditionals = 0;
 $statements = 0;
 $coveredstatements = 0;
 $methods = 0;
 $coveredmethods = 0;
 
 foreach (loadMetrics($inputFile) as $metric) {
-    $elements += (int) $metric['elements'];
-    $coveredElements += (int) $metric['coveredelements'];
+    $conditionals += (int) $metric['conditionals'];
+    $coveredconditionals += (int) $metric['coveredconditionals'];
     $statements += (int) $metric['statements'];
     $coveredstatements += (int) $metric['coveredstatements'];
     $methods += (int) $metric['methods'];
@@ -59,8 +59,8 @@ foreach (loadMetrics($inputFile) as $metric) {
 }
 
 // See calculation: https://confluence.atlassian.com/pages/viewpage.action?pageId=79986990
-$coveredMetrics = $coveredstatements + $coveredmethods + $coveredElements;
-$totalMetrics = $statements + $methods + $elements;
+$coveredMetrics = $coveredstatements + $coveredmethods + $coveredconditionals;
+$totalMetrics = $statements + $methods + $conditionals;
 
 if ($totalMetrics === 0) {
     printStatus('Insufficient data for calculation. Please add more code.', STATUS_ERROR);
